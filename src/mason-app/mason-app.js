@@ -1,4 +1,16 @@
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
+import firebase from 'firebase/app';
+import "firebase/auth";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyAUbZQdJoP7yNSWVnhl-O5FzsduIFA2yLU",
+  authDomain: "pwagram-45678.firebaseapp.com",
+  databaseURL: "https://pwagram-45678.firebaseio.com",
+  projectId: "pwagram-45678",
+  storageBucket: "pwagram-45678.appspot.com",
+  messagingSenderId: "797941836946",
+  appId: "1:797941836946:web:2fe4a5bb0b57993a"
+};
 
 /**
  * @customElement
@@ -13,7 +25,7 @@ class MasonApp extends PolymerElement {
         }
       </style>
         <slot id="login" name="login"></slot>
-        <p id="content">Other content...</p>
+        <button on-click="_testAuth">Test Auth</button>
     `;
   }
   static get properties() {
@@ -24,6 +36,21 @@ class MasonApp extends PolymerElement {
       }
     };
   }
+
+  constructor() {
+    super();
+    firebase.initializeApp(firebaseConfig);
+  }
+
+  _testAuth() {
+    firebase.auth().signInWithEmailAndPassword('admin@tanbt.com', 'admin123456').then(function(response) {
+      console.log(response);
+    })
+    .catch(function(error) {
+      console.log(error);
+    });
+  }
+
 }
 
 window.customElements.define('mason-app', MasonApp);
