@@ -3,6 +3,8 @@
 Playing around with mason FEaaS
 
 ## Troubleshoot
+#### Mason canvas can't be used inside a HTML custom element
+have to use slot to keep CSS.
 #### Don't see your feature
 * Make sure the domain where you're testing your feature is whitelisted in the whitelisted domains section of your feature's settings.
 * Make sure the feature is **published** after being changed.

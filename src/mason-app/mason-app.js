@@ -12,7 +12,8 @@ class MasonApp extends PolymerElement {
           display: block;
         }
       </style>
-      <h2>Hello [[prop1]]!</h2>
+        <slot id="login" name="login"></slot>
+        <p id="content">Other content...</p>
     `;
   }
   static get properties() {
