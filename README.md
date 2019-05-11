@@ -1,10 +1,16 @@
 # \<mason-app\>
 
 Playing around with mason FEaaS
+* Documentations and features mainly support React
+* How to know if a feature is fully downloaded, `loaded` and `WebComponentsReady` don't work.
 
 ## Troubleshoot
+#### Masion feature isnot updated
+publish masion feature and try cleaning your local cache
 #### Mason canvas can't be used inside a HTML custom element
 have to use slot to keep CSS.
+#### Canot create action in Mason
+have to add event listener inside your own app
 #### Don't see your feature
 * Make sure the domain where you're testing your feature is whitelisted in the whitelisted domains section of your feature's settings.
 * Make sure the feature is **published** after being changed.
